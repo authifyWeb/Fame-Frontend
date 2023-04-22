@@ -1,0 +1,17 @@
+{
+  "name": "authifyfame",
+  "version": "1.0.0",
+  "description": "Verify the social profiles and websites of your favourite personalities",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "authifyFame"
+  ],
+  "author": "webVerts",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "typeahead-standalone": "^4.19.1"
+  }
+}
