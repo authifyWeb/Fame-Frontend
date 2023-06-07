@@ -6,11 +6,10 @@
 
 ## <ins>Quick Links</ins>
 * [Website](https://fame.authifyweb.com/)
-* [Data Source](https://github.com/authifyWeb/authifyFame-Database)
-* [How we verify](https://github.com/authifyWeb/authifyFame#how-we-verify)
-* [Disclaimer](https://github.com/authifyWeb/authifyFame#disclaimer)
-* [Copyright](https://github.com/authifyWeb/authifyFame#copyright)
-* [License](https://github.com/authifyWeb/authifyFame#license)
+* [How we verify](https://github.com/authifyWeb/fame-frontend#how-we-verify)
+* [Disclaimer](https://github.com/authifyWeb/fame-frontend#disclaimer)
+* [Copyright](https://github.com/authifyWeb/fame-frontend#copyright)
+* [License](https://github.com/authifyWeb/fame-frontend#license)
 
 ### How we verify
 The URL you submit is searched through the Database for the Name you selected, and if the entire domain matches with any in the list, we'll show the link is verified. When we show we weren't able to able to verify, it only means, that particular link is not in the database. It'd be better if you take a more assisted approach rather than submitting data or process payments with the site directly. You can request the company to include that link in our database by sending an email to 'authifyweb@gmail.com' from their official email address. We'll contact you through the submitted social profile and make sure the all the URL's submitted are valid.
