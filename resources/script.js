@@ -185,7 +185,7 @@ for (var i = 0; i < cl.length; i++) {
 }
  
 if (!conditionMet) {
-  var Data = `<div style="color:white; background-color:#1f282d; font-size:12px;" >${new_link}<p><br><span style="color:red;  font-size: 18px;"> The page you submitted doesn't belong to the organization selected above</span>&nbsp; <span class="tooltip"> ❌ <span class="tooltiptext">Possibly a scam. Report the page directly to the owner. </span> </p> </div>`;
+  var Data = `<div style="color:white; background-color:#1f282d; font-size:12px;" >${new_link}<p><br><span style="color:red;  font-size: 18px;"> The page you submitted doesn't belong to the person chosen above</span>&nbsp; <span class="tooltip"> ❌ <span class="tooltiptext">Possibly a scam. Report the page directly to the owner. </span> </p> </div>`;
 
   var Disclaimer = `<br>Read <a href="https://github.com/authifyWeb/fame-Frontend#how-we-verify" style="color:white;" target="_blank"> how we verify</a> what is valid and what is not. </br>`;
 
