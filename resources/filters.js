@@ -62,7 +62,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 			}
   else if(hostname=="profiles.wordpress.org")
      {
-      link = hostname + pathname.toLowerCase(); 
+      link = hostname + '/'+ pathname.split('/')[1].toLowerCase(); 
       var output = compare(link); 
 			return output;
      }    
