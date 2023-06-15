@@ -76,6 +76,7 @@ authData=outp;
 
 //document.getElementById('output').innerHTML ="";
 document.getElementById("compatible").innerHTML ="";
+document.getElementById("verify_your_profile").innerHTML ="";
 
 
 document.getElementById('naam').innerHTML = `<p style="font-size:1em;"> Submit URL below to verify whether the site belongs to <span style="color:#DFB014 "> ${name} </span></> </p>`;
