@@ -138,7 +138,14 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 				var output = compare(link); 
 			  return output;
 
-      }      
+      }
+  else if(hostname=="linktr.ee"){
+    var path1=pathname.split('/')[1].toLowerCase();
+    link= hostname + '/'+ path1;
+    var output = compare(link);
+    return output;
+
+  }          
   else if(origin == "https://ko-fi.com" || origin =="https://www.buymeacoffee.com" || origin=="https://liberapay.com" || origin =="https://opencollective.com")
 				{
 					
