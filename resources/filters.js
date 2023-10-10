@@ -62,7 +62,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
       }
 	else if( origin=="https://www.twitch.tv" )
 			{
-				link = hostname + pathname.toLowerCase(); 
+				link = hostname +'/'+ pathname.split('/')[1].toLowerCase(); 
 				var output = compare(link); 
 			  return output;
 			}
@@ -70,7 +70,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 			{ var channel=(pathname.split('/')[1]);
       if(channel=="p"|| channel=="reels"){return `<p style="color:yellow;">Cannot verify individual posts or reels. Please submit the profile URL to verify.</p>`;}
       else{
-				link = hostname + pathname.toLowerCase(); 
+				link = hostname +'/'+ pathname.split('/')[1].toLowerCase(); 
 				var output = compare(link); 
 			  return output;
       }
@@ -134,7 +134,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
   else if(hostname == "mastodon.social" || hostname=="social.vivaldi.net" || hostname=="mastodon.online" || hostname=="mozilla.social" || hostname == "infosec.exchange" || hostname=="fosstodon.org" || hostname=="mas.to" || hostname=="mastodon.art" || hostname =="mstdn.social")
   
       {
-        link = hostname + pathname.toLowerCase(); 
+        link = hostname + '/'+ pathname.split('/')[1].toLowerCase(); 
 				var output = compare(link); 
 			  return output;
 
