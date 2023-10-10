@@ -66,6 +66,10 @@ onSubmit: (e, selectedSuggestion) => {
  
 if (selectedSuggestion) {
 
+   //Clear previous data 
+   data.innerHTML = "";
+   disclaimer.innerHTML = "";
+   error_message.innerHTML="";
  
 const myJSON = JSON.stringify(selectedSuggestion);
 const outp=JSON.parse(myJSON);
