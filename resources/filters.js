@@ -169,20 +169,12 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 					var output = compare(link);	
 					return output;	
 				
-				}
-  else if(hostname=="folin.io")
-  {
-        var path1= pathname.split('/')[1];
-        if(path1=="products"){return `<p style="color:yellow;">Cannot verify individual products, please visit user profile to verify.</p>`;}
-        else if(path1=="pages"){
-         var path2=pathname.split('/')[2];
-         var link = hostname + '/' + path2; var output=compare(link); return output; 
-        }            
-  }
+				}      
+
   else if(hostname == "addons.mozilla.org")
         /*Once the above condition is true, the function replaces the URL language to the the default en-US. This is used since mozilla supports multiple languages and the url structure is directly based on user language.  */
-          { lang=pathname.split('/')[1];
-            default_lang=lang.replace(lang,"en-US"); 
+          { var lang=pathname.split('/')[1];
+            var default_lang=lang.replace(lang,"en-US"); 
           link= hostname +'/'+ default_lang+ '/' +pathname.split('/')[2]+'/'+pathname.split('/')[3]+'/'+pathname.split('/')[4];
           var output = compare(link);
           return output;
@@ -198,7 +190,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 
   else if(hostname == "microsoftedge.microsoft.com")
         {
-          link=hostname+'/'+pathname;
+          link=hostname+pathname;
           var output= compare(link);
           return output;
         }
