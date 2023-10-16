@@ -62,7 +62,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
       }
 	else if( origin=="https://www.twitch.tv" )
 			{
-				link = hostname + pathname.toLowerCase(); 
+				link = hostname +'/'+ pathname.split('/')[1].toLowerCase(); 
 				var output = compare(link); 
 			  return output;
 			}
@@ -70,7 +70,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 			{ var channel=(pathname.split('/')[1]);
       if(channel=="p"|| channel=="reels"){return `<p style="color:yellow;">Cannot verify individual posts or reels. Please submit the profile URL to verify.</p>`;}
       else{
-				link = hostname + pathname.toLowerCase(); 
+				link = hostname +'/'+ pathname.split('/')[1].toLowerCase(); 
 				var output = compare(link); 
 			  return output;
       }
@@ -134,11 +134,25 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
   else if(hostname == "mastodon.social" || hostname=="social.vivaldi.net" || hostname=="mastodon.online" || hostname=="mozilla.social" || hostname == "infosec.exchange" || hostname=="fosstodon.org" || hostname=="mas.to" || hostname=="mastodon.art" || hostname =="mstdn.social")
   
       {
-        link = hostname + pathname.toLowerCase(); 
+        link = hostname + '/'+ pathname.split('/')[1].toLowerCase(); 
 				var output = compare(link); 
 			  return output;
 
-      }      
+      }
+  else if(hostname=="linktr.ee"){
+    var path1=pathname.split('/')[1].toLowerCase();
+    link= hostname + '/'+ path1;
+    var output = compare(link);
+    return output;
+
+  }
+  else if(hostname=="www.t.me" || hostname == "www.telegram.me"){
+    path1 = pathname.split('/')[1].toLowerCase();
+    if(path1 =="s"){link= hostname + '/'+ pathname.split('/')[2].toLowerCase();}
+    else{ link = hostname + '/'+ pathname.split('/')[1].toLowerCase();}
+      var output= compare(link);
+      return output;    
+  }          
   else if(origin == "https://ko-fi.com" || origin =="https://www.buymeacoffee.com" || origin=="https://liberapay.com" || origin =="https://opencollective.com")
 				{
 					
@@ -159,8 +173,8 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 
   else if(hostname == "addons.mozilla.org")
         /*Once the above condition is true, the function replaces the URL language to the the default en-US. This is used since mozilla supports multiple languages and the url structure is directly based on user language.  */
-          { lang=pathname.split('/')[1];
-            default_lang=lang.replace(lang,"en-US"); 
+          { var lang=pathname.split('/')[1];
+            var default_lang=lang.replace(lang,"en-US"); 
           link= hostname +'/'+ default_lang+ '/' +pathname.split('/')[2]+'/'+pathname.split('/')[3]+'/'+pathname.split('/')[4];
           var output = compare(link);
           return output;
@@ -176,7 +190,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 
   else if(hostname == "microsoftedge.microsoft.com")
         {
-          link=hostname+'/'+pathname;
+          link=hostname+pathname;
           var output= compare(link);
           return output;
         }

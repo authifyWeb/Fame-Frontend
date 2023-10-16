@@ -66,6 +66,10 @@ onSubmit: (e, selectedSuggestion) => {
  
 if (selectedSuggestion) {
 
+   //Clear previous data 
+   data.innerHTML = "";
+   disclaimer.innerHTML = "";
+   error_message.innerHTML="";
  
 const myJSON = JSON.stringify(selectedSuggestion);
 const outp=JSON.parse(myJSON);
@@ -138,7 +142,7 @@ function searchNow()
     // URL format is valid, continue with your code logic
   } catch (error) {
     // URL format is not valid, show an error message
-    var err_msg= `<p id="err_msg"style="margin-top:5px;">Submit a valid URL (eg https://url.authifyweb.com).</p>`;
+    var err_msg= `<p id="err_msg"style="margin-top:5px;">Submit a valid URL (eg https://fame.authifyweb.com).</p>`;
     error_message.innerHTML=err_msg;
 
     return; 
