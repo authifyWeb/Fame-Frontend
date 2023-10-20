@@ -500,16 +500,16 @@ height: 24px;
 width: 24px;
 }
 
-.single-item img {
-  height: 32px;
-  width: 32px;
-  /*border-radius: 5%; */
-  margin-right:5px;
-  padding-left:2px;
-  padding-right:2px;
+.single-item .propic {
+  height: 48px;
+  width: 48px; 
+  border-radius:50%;
+  
 
 }
-
+.details{
+  margin-left:10px;
+}
 #verify_your_profile{
   position:relative;
   top:15vh;

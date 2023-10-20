@@ -45,7 +45,7 @@ templates: {
     suggestion: (authifyFame) => (
 		
      `<div  class="single-item">
-      <img src=${authifyFame.logo} style="background-color:${authifyFame.bg}; font-size:12px;" loading="lazy">
+      <img class="propic" src="https://raw.githubusercontent.com/authifyWeb/avatar/main/uploads/${authifyFame.logo}.jpg"; style="background-color:${authifyFame.bg}; font-size:12px; " loading="lazy">
       <div class="details">
       <div class="company_name"><span>${authifyFame.name}</span><span> <img class="badge" src="images/bluetick.svg"></span></div>
 	  <div class="company_type">${authifyFame.cat}: ${authifyFame.origin} </div>
