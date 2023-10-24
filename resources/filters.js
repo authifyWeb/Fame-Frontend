@@ -244,7 +244,11 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
     var output=compare(link,link);
     return output;
   }
-   
+  else if(domain=="graphy.com"){
+    link=hostname;
+    var output=compare(link,link);
+    return output;
+  } 
 					
 	else{ link=domain;
     var output= compare(link,hostname);
