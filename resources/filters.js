@@ -217,7 +217,28 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
           link= hostname +'/'+ default_lang+'/' +pathname.split('/')[2]+'/'+pathname.split('/')[3]+'/'+pathname.split('/')[4];
           var output = compare(link,href);
           return output;
-        }        
+        }
+        
+  else if(domain == "slack.com"){     
+    link = hostname;
+    var output = compare(link,link);
+    return output;
+  }
+  else if(domain=="crew.work"){
+    link=hostname;
+    var output = compare(link,link);
+    return output;
+  }
+  else if(domain == "keka.com"){
+    link=hostname;
+    var output= compare(link,link);
+    return output;
+  }
+  else if(domain=="darwinbox.in"){
+    link=hostname;
+    var output = compare(link,link);
+    return output;
+  } 
    
 					
 	else{ link=domain;
