@@ -1,16 +1,16 @@
 import { compare } from './script.js';
 
-export function filtering(url, href, origin, hostname,protocol,pathname,search)
-{
+export function filtering(url, href, origin, hostname,protocol,pathname,search,domain)
+{var link;
 	if(protocol != "https:" ) {return `<p style="padding:40px; color:lightred;"> This website is not secure. Please refrain from submitting personal data and don't download files from such sources</p>`;}
 
   else if(origin=="https://duckduckgo.com")
   { if(pathname=="/") return `<p> This is DuckDuckGo Search Results page. Be wary of the links you click from a results page.</p>`;
-    else{ link=hostname; var output = compare(link); return output;}
+    else{ link=hostname; var output = compare(link,link); return output;}
   } 
   else if(origin=="https://www.bing.com") 
 		{ if(pathname=="/search" || pathname=="/shop") { return `<p> This is Microsoft Bing Search Results page. Be wary of the links you click from a results page.</p>`;}
-		else{ link=hostname; var output = compare(link); return output;}
+		else{ link=hostname; var output = compare(link,link); return output;}
 		}
     else if(hostname=="www.google.com"||hostname=="www.google.ca"||hostname=="www.google.co.in"||hostname=="www.google.co.uk"||hostname=="europe.google.com"){
       var hostname="www.google.com"; 				
@@ -18,7 +18,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
         {
           return `<p> This is Google Search Results page. Be wary of the links you click from a results page.</p>`;
         }
-        else{link=hostname; var output=compare(link); return output;}
+        else{link=hostname; var output=compare(link,link); return output;}
   
     }
     else if(hostname=="search.yahoo.com"||hostname=="in.search.yahoo.com"||hostname=="uk.search.yahoo.com"||hostname=="us.search.hostname.com"){
@@ -33,19 +33,19 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 	else if( origin =="https://www.facebook.com" )  
 			{	
 				link= hostname+'/'+pathname.split('/')[1];
-				var output = compare(link);
+				var output = compare(link,link);
 				return output;
 			}
 	else if(origin =="https://twitter.com")
 			{
 				
 				link=hostname+'/'+pathname.split('/')[1].toLowerCase();
-				var output = compare(link);	
+				var output = compare(link,link);	
 				return output;
 			}
   else if(hostname == "www.threads.net"){
         link= hostname + '/' + pathname.split('/')[1].toLowerCase();
-        var output = compare(link);
+        var output = compare(link,link);
         return output;
       }    
 	else if(origin=="https://www.youtube.com")
@@ -57,13 +57,13 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
         var id=pathname.split('/')[2].toLowerCase();
         link= hostname+'/'+id}
         else{link=hostname+'/'+pathname.split('/')[1].toLowerCase();}
-        var output = compare(link);	
+        var output = compare(link,link);	
         return output;
       }
 	else if( origin=="https://www.twitch.tv" )
 			{
 				link = hostname +'/'+ pathname.split('/')[1].toLowerCase(); 
-				var output = compare(link); 
+				var output = compare(link,link); 
 			  return output;
 			}
   else if(origin=="https://www.instagram.com" )
@@ -71,26 +71,26 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
       if(channel=="p"|| channel=="reels"){return `<p style="color:yellow;">Cannot verify individual posts or reels. Please submit the profile URL to verify.</p>`;}
       else{
 				link = hostname +'/'+ pathname.split('/')[1].toLowerCase(); 
-				var output = compare(link); 
+				var output = compare(link,link); 
 			  return output;
       }
 			}
   else if(hostname=="profiles.wordpress.org")
      {
       link = hostname + '/'+ pathname.split('/')[1].toLowerCase(); 
-      var output = compare(link); 
+      var output = compare(link,link); 
 			return output;
      }    
 	else if(origin=="https://www.reddit.com" || origin=="https://old.reddit.com")
 			{	
 				link=hostname +'/' +pathname.split('/')[1]+ '/' + pathname.split('/')[2].toLowerCase();
-				var output = compare(link);
+				var output = compare(link,link);
 				return output;
 			}
   else if(hostname=="play.google.com")
         {
          link=hostname+pathname+search;
-         var output = compare(link);
+         var output = compare(link,href);
 				 return output; 
         }    
   else if(hostname=="apps.apple.com")
@@ -102,7 +102,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
         const Id = 'id'+ extractId(pathname);
           if(pathname.includes('developer')){link=hostname+'/developer/'+Id;}
           else if(pathname.includes('app')){link=hostname+'/app/'+Id;}
-          var output= compare(link);
+          var output= compare(link,href);
           return output;
 
 
@@ -117,7 +117,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 					else{
 						var link=hostname+'/'+pathname.split('/')[1].toLowerCase();
 						}
-				var output = compare(link);	
+				var output = compare(link,link);	
 				return output;	
 				}
   /* Mastodon Instances
@@ -135,14 +135,14 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
   
       {
         link = hostname + '/'+ pathname.split('/')[1].toLowerCase(); 
-				var output = compare(link); 
+				var output = compare(link,link); 
 			  return output;
 
       }
   else if(hostname=="linktr.ee"){
     var path1=pathname.split('/')[1].toLowerCase();
     link= hostname + '/'+ path1;
-    var output = compare(link);
+    var output = compare(link,link);
     return output;
 
   }
@@ -150,14 +150,14 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
     path1 = pathname.split('/')[1].toLowerCase();
     if(path1 =="s"){link= hostname + '/'+ pathname.split('/')[2].toLowerCase();}
     else{ link = hostname + '/'+ pathname.split('/')[1].toLowerCase();}
-      var output= compare(link);
+      var output= compare(link,href);
       return output;    
   }          
   else if(origin == "https://ko-fi.com" || origin =="https://www.buymeacoffee.com" || origin=="https://liberapay.com" || origin =="https://opencollective.com")
 				{
 					
 					link=hostname+'/'+pathname.split('/')[1].toLowerCase();
-					var output = compare(link);
+					var output = compare(link,link);
 					return output ;
 				}
   else if(origin=="https://www.patreon.com")
@@ -166,7 +166,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
 						if(id=="join")
 							{ var link= hostname+'/'+pathname.split('/')[2].toLowerCase();}
 						else { var link = hostname+'/'+pathname.split('/')[1].toLowerCase(); }
-					var output = compare(link);	
+					var output = compare(link,link);	
 					return output;	
 				
 				}
@@ -181,7 +181,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
           {var link= hostname+'/'+path1;} 
           else var link=hostname;
 
-          var output=compare(link); return output; 
+          var output=compare(link,href); return output; 
         }            
                   
 
@@ -190,7 +190,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
           { var lang=pathname.split('/')[1];
             var default_lang=lang.replace(lang,"en-US"); 
           link= hostname +'/'+ default_lang+ '/' +pathname.split('/')[2]+'/'+pathname.split('/')[3]+'/'+pathname.split('/')[4];
-          var output = compare(link);
+          var output = compare(link,href);
           return output;
       
           }   
@@ -198,14 +198,14 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
   else if(hostname+'/'+pathname.split('/')[1] == "chrome.google.com/webstore")
           {
             link= hostname +'/'+pathname.split('/')[1] +'/'+ pathname.split('/')[2] +'/'+ pathname.split('/')[3] +'/'+ pathname.split('/')[4]
-            var output= compare(link);
+            var output= compare(link,href);
             return output;
           }		
 
   else if(hostname == "microsoftedge.microsoft.com")
         {
           link=hostname+pathname;
-          var output= compare(link);
+          var output= compare(link,href);
           return output;
         }
 
@@ -215,12 +215,13 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search)
           lang=pathname.split('/')[1];
           default_lang=lang.replace(lang,"en");
           link= hostname +'/'+ default_lang+'/' +pathname.split('/')[2]+'/'+pathname.split('/')[3]+'/'+pathname.split('/')[4];
-          var output = compare(link);
+          var output = compare(link,href);
           return output;
         }        
    
 					
-	else{var output= compare(hostname);
+	else{ link=domain;
+    var output= compare(link,hostname);
 				return output ;
 			}
 }
