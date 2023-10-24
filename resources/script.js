@@ -155,17 +155,32 @@ function searchNow()
     var pathname= url.pathname;
     var search = url.search;
 
+    var domain = filterdomain_from_hostname(hostname);
+
     var output= filtering(url, href, origin, hostname,protocol,pathname,search); 
 		
 			data.innerHTML = (output || "...Verifying");
 			
-
-
-
-
 }
 
+function filterdomain_from_hostname(hostname)
+{
+  var parts = hostname.split('.');
+  var domain;
 
+  if (parts.length > 2) {
+    if (parts[parts.length - 2].length === 2 || parts[parts.length - 2].length === 3) {
+      domain = parts.slice(-3).join('.');
+    } else {
+      domain = parts.slice(-2).join('.');
+    }
+  } else {
+    domain = hostname;
+  }
+
+  return domain;
+
+}
 
 export function compare(link){
 var json = authData; 
