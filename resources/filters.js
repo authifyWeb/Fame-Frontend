@@ -30,12 +30,24 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
     }
     else if(origin=="https://search.brave.com") 
 		{ return `<p> This is Brave Search Results page. Be wary of the links you click from a results page.</p>`;}		
-	else if( origin =="https://www.facebook.com" )  
-			{	
-				link= hostname+'/'+pathname.split('/')[1];
-				var output = compare(link,link);
-				return output;
-			}
+    else if( hostname =="www.facebook.com" || hostname=="m.facebook.com"|| hostname=="facebook.com"|| domain=="fb.com" )  
+    {	var hostname="www.facebook.com";
+      var path1=pathname.split('/')[1];
+      if(path1=="profile.php"){
+        var search=search.split('&')[0];
+        var searchid=search.split('id=')[1];
+        link=hostname+'/'+searchid;
+      }
+      else if(path1=="people"){
+      var searchid=pathname.split('/')[3];
+      link=hostname+'/'+searchid;
+    } 
+      else{
+      link= hostname+'/'+pathname.split('/')[1];
+      }
+      var output = compare(link,href);
+      return output;
+    }
 	else if(origin =="https://twitter.com")
 			{
 				
