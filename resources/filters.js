@@ -163,7 +163,6 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
     if(path1=="stream"|| path1=="clips"){return `<p style="color:yellow;">Cannot verify individual streams or clips. Please submit the profile URL to verify.</p>`;}
     if(path1=="streamers"){link=hostname+'/'+pathname.split('/')[2];}
     else{link=domain;}
-    console.log(link);
     var output=compare(link,href);
     return output; 
   }
