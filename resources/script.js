@@ -86,7 +86,7 @@ document.getElementById("verify_your_profile").innerHTML ="";
 document.getElementById('naam').innerHTML = `<p style="font-size:1em;"> Submit URL below to verify whether the site belongs to <span style="color:#DFB014 "> ${name} </span></> </p>`;
 
 var form=`<input type='url' id='link_id'  autocomplete="off" placeholder="Paste the URL" > `;
-var btn = `<input type="submit" id="search_btn" value="Search 🔍"> <p style="color:white; font-size:12px; padding-top:2px;">Please use a valid URL format (with https://). Otherwise, no data will be displayed.</p><div class="refresh_btn_box" style="margin-top:5px; margin-bottom:5px;"><button type="button" id="refresh_btn">Search Another Link</button></div> `;
+var btn = `<input type="submit" id="search_btn" value="Search 🔍"> <p style="color:white; font-size:12px; padding-top:2px;">Please use a valid URL format (with https://). Otherwise, no data will be displayed.</p><div class="refresh_btn_box" style="margin-top:5px; margin-bottom:5px;"><button type="button" id="refresh_btn">Search Another Celeb</button></div> `;
 input_form.innerHTML=form;
 document.getElementById('input_btn').addEventListener('click', searchNow);
 input_btn.innerHTML=btn;
