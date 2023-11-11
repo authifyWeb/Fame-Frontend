@@ -225,6 +225,13 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
         else{link=path1;}
         var output=compare(link,href); return output;
       }
+    else if(hostname=="kadakmerch.com"){
+      var path1=pathname.split('/')[1].toLowerCase();
+      if(path1=="products"){return `<p style="color:yellow;">Cannot verify individual products, please visit user profile to verify.</p>`;}
+      if(path1=="collections"){var link=hostname+'/'+ pathname.split('/')[2].toLowerCase();}
+      else {link=domain;}
+      var output=compare(link,href); return output;
+    }  
 
   else if(hostname == "addons.mozilla.org")
         /*Once the above condition is true, the function replaces the URL language to the the default en-US. This is used since mozilla supports multiple languages and the url structure is directly based on user language.  */
