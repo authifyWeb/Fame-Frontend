@@ -192,7 +192,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
 				}
   else if(hostname=="folin.io")
         {
-          var path1= pathname.split('/')[1];console.log(path1);
+          var path1= pathname.split('/')[1];
           if(path1=="products"){return `<p style="color:yellow;">Cannot verify individual products, please visit user profile to verify.</p>`;}
           else if(path1=="pages"){
           var path2=pathname.split('/')[2];
@@ -202,7 +202,15 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
           else var link=hostname;
 
           var output=compare(link,href); return output; 
-        }            
+        }
+  else if(hostname=="www.wishlink.com")
+      {
+        var path1=pathname.split('/')[1].toLowerCase();
+        if(path1=="wishlist"||path1=="w"|| path1==""||path1=="trialroom"){link=domain;}
+        else {link=path1;}
+        var output=compare(link,href); return output;
+        
+      }            
                   
 
   else if(hostname == "addons.mozilla.org")
