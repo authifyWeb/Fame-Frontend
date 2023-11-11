@@ -206,7 +206,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
   else if(hostname=="www.wishlink.com")
       {
         var path1=pathname.split('/')[1].toLowerCase();
-        if(path1=="wishlist"||path1=="w"|| path1==""){link=domain;}
+        if(path1=="wishlist"||path1=="w"|| path1==""||path1=="trialroom"){link=domain;}
         else {link=path1;}
         var output=compare(link,href); return output;
         
