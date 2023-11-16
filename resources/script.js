@@ -191,10 +191,10 @@ var conditionMet = false; // Flag variable to track if the condition is met
 for (var i = 0; i < cl.length; i++) {
   if (json.urls[i] === link) {
 
-    var Data = `<div style="color:white;font-size:12px; background-color:#1f282d;">` + display_link + `</br> <p> <span style="color:#A2FB15; font-size: 14px; ">Verified by authifyFame.</span> &nbsp;<span class="tooltip" > ✅ <span class="tooltiptext">This website is valid and legal. </span> </p></br> <p><span style="font-size:14px; color:white;">The page you submitted belongs to: </span><br> <span class="op_logo"><img src="${json.logo}"></span><span style="font-size:18px; color: #DFb014"> ${json.name}</span></p></br></div>`;
+    var Data = `<div style="color:white;font-size:12px; background-color:#1f282d;">` + display_link + `</br> <p> <span style="color:#A2FB15; font-size: 14px; ">Verified by authifyFame.</span> &nbsp;<span class="tooltip" > ✅ <span class="tooltiptext">This website is valid and legal. </span> </p></br> <p><span style="font-size:14px; color:white;">The page you submitted belongs to: </span><br> <span style="font-size:18px; color: #DFb014"> ${json.name}</span></p></br></div>`;
 
                 
-    var Disclaimer = `Unless explicitly mentioned with an "Official" tag, all data is obtained from the public domain. </br>`;
+    var Disclaimer = `<br><p style="color:yellow;">Unless explicitly mentioned with an "Official" tag, all data is obtained from the public domain.</p> </br>`;
 
     data.innerHTML = Data;
     disclaimer.innerHTML = Disclaimer;
@@ -208,7 +208,7 @@ for (var i = 0; i < cl.length; i++) {
 if (!conditionMet) {
   var Data = `<div style="color:white; background-color:#1f282d; font-size:12px;" >` + display_link+`<p><br><span style="color:red;  font-size: 18px;"> The page you submitted doesn't belong to the person chosen above</span>&nbsp; <span class="tooltip"> ❌ <span class="tooltiptext">Possibly a scam. Report the page directly to the owner. </span> </p> </div>`;
 
-  var Disclaimer = `<br>Unless explicitly mentioned with an "Official" tag, all data is obtained from the public domain. </br>`;
+  var Disclaimer = `<br><p style="color:yellow;">Unless explicitly mentioned with an "Official" tag, all data is obtained from the public domain.</p> </br>`;
 
   data.innerHTML = Data;
   disclaimer.innerHTML = Disclaimer;
