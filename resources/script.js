@@ -191,7 +191,7 @@ var conditionMet = false; // Flag variable to track if the condition is met
 for (var i = 0; i < cl.length; i++) {
   if (json.urls[i] === link) {
 
-    var Data = `<div style="color:white;font-size:12px; background-color:#1f282d;">` + display_link + `</br> <p> <span style="color:#A2FB15; font-size: 14px; ">Verified by authifyFame.</span> &nbsp;<span class="tooltip" > ✅ <span class="tooltiptext">This website is valid and legal. </span> </p></br> <p><span style="font-size:14px; color:white;">The page you submitted belongs to: </span><br> <span class="op_logo"><img src="${json.logo}"></span><span style="font-size:18px; color: #DFb014"> ${json.name}</span></p></br></div>`;
+    var Data = `<div style="color:white;font-size:12px; background-color:#1f282d;">` + display_link + `</br> <p> <span style="color:#A2FB15; font-size: 14px; ">Verified by authifyFame.</span> &nbsp;<span class="tooltip" > ✅ <span class="tooltiptext">This website is valid and legal. </span> </p></br> <p><span style="font-size:14px; color:white;">The page you submitted belongs to: </span><br> <span style="font-size:18px; color: #DFb014"> ${json.name}</span></p></br></div>`;
 
                 
     var Disclaimer = `<br><p style="color:yellow;">Unless explicitly mentioned with an "Official" tag, all data is obtained from the public domain.</p> </br>`;
