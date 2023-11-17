@@ -297,7 +297,12 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
     link=hostname;
     var output=compare(link,link);
     return output;
-  } 
+  }
+  else if(domain=="merchgarage.com"){
+    link=hostname;
+    var output=compare(link,href);
+    return output;
+  }
    
 					
 	else{ link=domain;
