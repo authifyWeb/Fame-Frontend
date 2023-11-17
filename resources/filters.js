@@ -207,7 +207,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
       {
         var path1=pathname.split('/')[1].toLowerCase();
         if(path1=="wishlist"||path1=="w"|| path1==""||path1=="trialroom"){link=domain;}
-        else {link=path1;}
+        else {link=hostname+'/'+path1;}
         var output=compare(link,href); return output;
         
       }            
@@ -215,14 +215,15 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
       {
         var path1=pathname.split('/')[1].toLowerCase(); 
         if(path1=="for_you"||path1=="galleries"||path1=="hire"||path1=="assets"||path1=="joblist"||path1==""){link=domain;}
-        else {link=path1;}
+        else {link=hostname + '/'+ path1;}
+        
         var output=compare(link,href); return output;
       }
   else if(hostname=="beacons.ai")                    
       {
         var path1=pathname.split('/')[1].toLowerCase();
         if(path1=="i"||path1==""){link=domain;}
-        else{link=path1;}
+        else{link=hostname+'/'+path1;}
         var output=compare(link,href); return output;
       }
     else if(hostname=="kadakmerch.com"){
