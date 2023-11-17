@@ -232,7 +232,13 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
       if(path1=="collections"){var link=hostname+'/'+ pathname.split('/')[2].toLowerCase();}
       else {link=domain;}
       var output=compare(link,href); return output;
-    }  
+    }
+    else if(hostname=="bio.site"){
+      var path1= pathname.split('/')[1].toLowerCase();
+      link=hostname+'/'+path1;
+      var output = compare(link,href);
+      return output;
+    }
 
   else if(hostname == "addons.mozilla.org")
         /*Once the above condition is true, the function replaces the URL language to the the default en-US. This is used since mozilla supports multiple languages and the url structure is directly based on user language.  */
