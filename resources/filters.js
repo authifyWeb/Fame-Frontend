@@ -243,7 +243,6 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
       var path1=pathname.split('/')[1].toLowerCase();
       link=hostname+'/'+path1;
       var output =compare(link,href);
-      console.log(link);
       return output;
     }
 
