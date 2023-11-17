@@ -239,10 +239,16 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
       var output = compare(link,href);
       return output;
     }
-    else if(hostname="www.liinks.co"){
+    else if(hostname=="www.liinks.co"){
       var path1=pathname.split('/')[1].toLowerCase();
       link=hostname+'/'+path1;
       var output =compare(link,href);
+      return output;
+    }
+    else if(hostname=="solo.to"){
+      var path1=pathname.split('/')[1].toLowerCase();
+      link=hostname+'/'+path1;
+      var output= compare(link,href);
       return output;
     }
 
