@@ -332,7 +332,11 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
     var output=compare(link,href);
     return output;
   }
-   
+  else if(domain=="creator-spring.com"){
+    link=hostname;
+    var output=compare(link,href);
+    return output;
+  }   
 					
 	else{ link=domain;
     var output= compare(link,hostname);
