@@ -60,7 +60,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
         var output = compare(link,link);
         return output;
       }    
-	else if(origin=="https://www.youtube.com")
+	else if(origin=="https://www.youtube.com" || hostname=="m.youtube.com")
       {
         var channel=(pathname.split('/')[1]);
         if(channel=="channel" ||channel=="user" ) { link = hostname +'/' +pathname.split('/')[1]+ '/' + pathname.split('/')[2];}
