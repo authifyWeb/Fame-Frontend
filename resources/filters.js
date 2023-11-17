@@ -257,6 +257,20 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
       var output=compare(link,href);
       return output;
     }
+    else if(hostname=="withkoji.com" || hostname=="koji.to"){
+      var path1=pathname.split('/')[1].toLowerCase();
+      if(hostname=="koji.to"){link="withkoji.com"+'/'+path1;}
+      else if(hostname=="withkoji.com"){
+        if(path1.startsWith('@') ) {
+        path1=path1.replace("@","");
+        link=hostname+'/'+path1;
+      }
+    }
+      else {link=domain;}
+      var output=compare(link,href);
+      console.log(link);
+      return output;
+    }
 
   else if(hostname == "addons.mozilla.org")
         /*Once the above condition is true, the function replaces the URL language to the the default en-US. This is used since mozilla supports multiple languages and the url structure is directly based on user language.  */
