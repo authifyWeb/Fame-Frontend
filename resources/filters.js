@@ -268,7 +268,14 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
     }
       else {link=domain;}
       var output=compare(link,href);
-      console.log(link);
+      
+      return output;
+    }
+    else if(hostname=="www.upwork.com"){
+    var path1=pathname.split('/')[1].toLowerCase();
+      if(path1=="freelancers"){var path2=pathname.split('/')[2].replace('~',""); link=hostname+'/'+path2;}
+      else{link=domain;}  
+      var output=compare(link,href);
       return output;
     }
 
