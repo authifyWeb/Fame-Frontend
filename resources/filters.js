@@ -284,6 +284,13 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
       var output=compare(link,href);
       return output;
     }
+    else if(hostname== "dev.to"){
+      var path1=pathname.split('/')[1].toLowerCase();
+      if(path1.startsWith('@')){path1=path1.replace('@',"")}
+      link=hostname+'/'+path1;
+      var output=compare(link,href);
+      return output;
+    }  
 
   else if(hostname == "addons.mozilla.org")
         /*Once the above condition is true, the function replaces the URL language to the the default en-US. This is used since mozilla supports multiple languages and the url structure is directly based on user language.  */
