@@ -290,6 +290,12 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
       link=hostname+'/'+path1;
       var output=compare(link,href);
       return output;
+    }
+    else if(domain=="gravatar.com"){
+      var path1=pathname.split('/')[1].toLowerCase();
+      link=domain+'/'+path1;
+      var output=compare(link,href);
+      return output;
     }  
 
   else if(hostname == "addons.mozilla.org")
