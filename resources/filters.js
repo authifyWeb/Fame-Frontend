@@ -315,7 +315,6 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
     }
     else if(domain="notion.site"){
       link=hostname;
-      console.log(link)
       var output=compare(link,href);
       return output;
     }
