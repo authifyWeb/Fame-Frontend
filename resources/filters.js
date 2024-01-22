@@ -143,7 +143,7 @@ export function filtering(url, href, origin, hostname,protocol,pathname,search,d
   mastodon.art
   mstdn.social
   */
-  else if(hostname == "mastodon.social" || hostname=="social.vivaldi.net" || hostname=="mastodon.online" || hostname=="mozilla.social" || hostname == "infosec.exchange" || hostname=="fosstodon.org" || hostname=="mas.to" || hostname=="mastodon.art" || hostname =="mstdn.social")
+  else if(hostname == "mastodon.social" || hostname=="social.vivaldi.net" || hostname=="mastodon.online" || hostname=="mozilla.social" || hostname == "infosec.exchange" || hostname=="fosstodon.org" || hostname=="mas.to" || hostname=="mastodon.art" || hostname =="mstdn.social" || hostname=="newsie.social")
   
       {
         link = hostname + '/'+ pathname.split('/')[1].toLowerCase(); 
