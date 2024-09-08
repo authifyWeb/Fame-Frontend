@@ -1,472 +1,867 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> About &mdash; What is authifyFame?</title>
-        <meta name="description" content="Understand what authifyFame is and how it's an ally for both users and Famous Personalities.">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>About &mdash; What is an authifyFame Profile Card?</title>
+        <meta name="description" content="Understand what authifyFame profile card is and how it helps celebrities, influencers and other digital creators safeguard their online reputation." />
+        <meta property="og:title" content="About &mdash; What is an authifyFame Profile Card?">
+        <meta property="og:description" content="Understand what authifyFame profile card is and how it helps celebrities, influencers and other digital creators safeguard their online reputation.">
+        <meta property="og:image" content="https://fame.authifyweb.com/images/what-is-authifyfame.png">
         <meta name="google-site-verification" content="D6Q4n8azCjI14o-iCcXxn0r3_xZ-3r7wzBaz25y_Clw" />
-        <meta name="keywords" content="verify URL, verify website, authifyFame, what is authifyFame, verify celebrity profiles">
-        <meta charset="utf-8"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
-		<link rel="manifest" href="../images/site.webmanifest">
-		<style>
+        <meta name="keywords" content="authifyFame, authifyFame Profile Cards, what is authifyFame, verify celebrity profiles" />
+        <meta charset="utf-8" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png" />
+        <link rel="manifest" href="../images/site.webmanifest" />
+        <style>
             @font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 400;
-    
-    src: local(''),
-         url('../resources/fonts/montserrat-v25-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../resources/fonts/montserrat-v25-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../resources/fonts/montserrat-v25-latin-regular.woff') format('woff'), /* Modern Browsers */
-         url('../resources/fonts/montserrat-v25-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('../resources/fonts/montserrat-v25-latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
-  }
-  *{
-      box-sizing: border-box;
-      margin: 0px;
-      padding: 0px;
-  }
-  
-  body{
-        font-family: 'Montserrat', sans-serif;
-        background-color: #1f282d; /* #343434*/
-        font-weight:400px ;
-      }
-  
-  nav{	position:fixed;
-          top:0; left:0; right:0; 
-          
-          padding-top: 9px;
-          
-          display: flex;
-          justify-content: space-between;
-          min-height: 8vh;
-          background-color: #1f282d; /* or use #5d4954*/
-      }
-  
-  .logo a{
-          position: fixed;
-          padding-left: 35px;
-          padding-top: 5px;
-          text-decoration: none;
-          font-family: 'Montserrat', sans-serif;
-          letter-spacing: 3px;
-          font-size: 20px;
-          font-weight: 200;
-      
-        }
-        .brand_arch{
-		color:goldenrod;
-		font-size:12px; 
-		position:absolute; 
-		left:60px; 
-		top:37px;  
-	}
-  
-      .dropbtn {
-        background-color: #1f282d;
-        color: white;
-        padding: 1px;
-        font-size: 14px;
-        border: none;
-        cursor: grab;
-        
-      }
-      
-      .dropdown {
-        
-        display: inline-block;
-      }
-      
-      .dropdown-content {
-        padding-top:20px;
-        display: none;
-        position: absolute;
-        background-color: #1f282d;
-        min-width: 130px;
-        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-        border-radius: 5px ;
-      z-index:3;
-      }
-      
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-      
-      .dropdown-content a:hover {background-color: #354852}
-      
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
-      
-      .dropdown:hover .dropbtn {
-        background-color: #354852;
-      }
-      
-      .pages{
-        
-      padding-top: 8px;
-      font-size: 14px;
-      position:fixed;
-      right:100px;
-      
-      }	
-      .pages a{
-      text-decoration: none;
-      color:skyblue;
-      }	
-      @media (min-width: 320px) and (max-width: 999px){
-       
-        .pages{
-          position: fixed;
-          right:80px;
-          padding-top:10px; /* 3px in case get_verified is displayed */  }
-      }
-      
-  
-  
-  #menu__toggle {
-    opacity: 0;
-  }
-  #menu__toggle:checked + .menu__btn > span {
-    
-    transform: rotate(45deg);
-    
-  }
-  #menu__toggle:checked + .menu__btn > span::before {
-    top: 0;
-    transform: rotate(0deg);
-  }
-  #menu__toggle:checked + .menu__btn > span::after {
-    top: 0;
-    transform: rotate(90deg);
-  }
-  #menu__toggle:checked ~ .menu__box {
-    left: 0 !important;
-  }
-  .menu__btn {
-    position: fixed;
-    top: 16px;
-    right: 30px;
-    width: 26px;
-    height: 26px;
-    cursor: grab;
-    z-index: 1;
-    padding-top: 8px;
-    
-  }
-  
-  .menu__btn > span, 
-  .menu__btn > span::before,
-  .menu__btn > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    background-color: #EDE3E3;
-    transition-duration: .25s;
-  
-  }
-  .menu__btn > span::before {
-    content: '';
-    top: -8px;
-  }
-  .menu__btn > span::after {
-    content: '';
-    top: 8px;
-  }
-  .menu__box {
-    display: block;
-    position: absolute;
-    top: 8vh;
-    left: -100%;
-    width: 200px;
-    height: min-height; /*100% for viewport height*/ 
-    margin:10px;
-    padding: 20px 0px;
-    background-color: #202b31;
-    
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-    transition-duration: .25s;
-    border-radius: 0px 17px 27px 0px ;
-    
-    }
-    
-    .menu__box li{
-         list-style: none;
-    }
-    
-      
-  .menu__item {
-    display: block;
-    padding: 8px 30px;
-    color: #EDE3E3;
-    letter-spacing: 3px;
-    font-size: 16px;
-    line-height: 1;
-    font-weight: 100;
-    text-decoration: none;
-    transition-duration: .25s;
-    
-  
-  }
-  
-  #menu1{
-  margin-bottom:80px;
-  }
-  
-  
-  .menu__item:hover {
-    background-color: #354852;
-    color: #FFFFFF;
-  }
-  
-  .foo__item {
-    display: block;
-    padding: 8px 30px;
-    color: #EDE3E3;
-    letter-spacing: 3px;
-    font-size: 16px;
-    line-height: 1;
-    font-weight: 100;
-    text-decoration: none;
-    
-  }
-  .foo__item:hover {
-    background-color: #354852;
-    color: #FFFFFF;
-  }
-  
-  /****  Nav Menu Ends Here ****/
-  
-/****  Footer Menu Begins Here ****/
-.footer{
-	        text-align: center;
-            line-height: 1em;
-    	}	
-        .footer a, .footer p{
-	text-decoration: none;
-  color:rgb(151, 149, 250);
-	letter-spacing: 3px;
-	font-size: 12px;
-	font-weight: 200;
-	margin-bottom:10px;
-    
-	}
+                font-family: "Montserrat";
+                font-style: normal;
+                font-display: swap;
+                font-weight: 400;
 
-#FooterLinks{
-	font-family: 'Montserrat', sans-serif;
-}
-  
-  @media (min-width: 320px) and (max-width: 999px)  {
-  
-    
-  
-  
-  }
-      
-      
-  /****  Footer Ends Here ****/
+                src: local(""), url("../resources/fonts/montserrat-v25-latin-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("../resources/fonts/montserrat-v25-latin-regular.woff2") format("woff2"),
+                    /* Super Modern Browsers */ url("../resources/fonts/montserrat-v25-latin-regular.woff") format("woff"), /* Modern Browsers */ url("../resources/fonts/montserrat-v25-latin-regular.ttf") format("truetype"),
+                    /* Safari, Android, iOS */ url("../resources/fonts/montserrat-v25-latin-regular.svg#Montserrat") format("svg"); /* Legacy iOS */
+            }
+            * {
+                box-sizing: border-box;
+                margin: 0px;
+                padding: 0px;
+            }
+            body {
+                margin: 0;
+                font-family: "Montserrat", sans-serif;
+                background-color: #1f282d;
+                color: #ffffff;
+                line-height: 1.5;
+            }
 
-  .main_container{
-	
-    padding:50px;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #1f282d;
-    color:white;
-	font-size: 16px;
-	font-weight: 400px;
-	line-height: 1.5em;
-  }
-  .main_container a:hover{
-    color:red;
-  }
-h1{
-    padding-top:9vh;
-    color:skyblue;
-    text-align: center;
-    line-height: 1.2em;
-    
-}
-h4{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color:skyblue;
-}
-h3{
-    padding-top: 8px;
-    padding-bottom: 9px;
-    color:goldenrod;
-}
-p{
-    color:white;
-    padding-bottom:3px;
-} 
-.hero{
-	padding-top:20px;
-	padding-bottom:20px;
-    font-size: 16px;
-  }
-  .hero a{
-	text-decoration:none;
-	color:skyblue;
-  }
-blockquote{
-    padding:30px;
-    color: white;
-}
-.trustedbadge{
-  color:goldenrod;
-  margin-left:35px;
-}
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
 
-a{color:#7bbce2; text-decoration:none;}
-@media (min-width: 320px) and (max-width: 999px)  {
-body{
-    padding:10px;
-}
-.main_container{
-    padding:5px;
-}
-blockquote{
-    padding:15px;
-}
-}
+                padding-top: 9px;
+
+                display: flex;
+                justify-content: space-between;
+                min-height: 8vh;
+                background-color: #1f282d; /* or use #5d4954*/
+            }
+
+            .logo a {
+                position: fixed;
+                padding-left: 35px;
+                padding-top: 5px;
+                text-decoration: none;
+                font-family: "Montserrat", sans-serif;
+                letter-spacing: 3px;
+                font-size: 20px;
+                font-weight: 200;
+            }
+            .brand_arch {
+                color: goldenrod;
+                font-size: 12px;
+                position: absolute;
+                left: 60px;
+                top: 37px;
+            }
+
+            .dropbtn {
+                background-color: #1f282d;
+                color: white;
+                padding: 1px;
+                font-size: 14px;
+                border: none;
+                cursor: grab;
+            }
+
+            .dropdown {
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                padding-top: 20px;
+                display: none;
+                position: absolute;
+                background-color: #1f282d;
+                min-width: 130px;
+                box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+                border-radius: 5px;
+                z-index: 3;
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #354852;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #354852;
+            }
+
+            .pages {
+                padding-top: 8px;
+                font-size: 14px;
+                position: fixed;
+                right: 100px;
+            }
+            .pages a {
+                text-decoration: none;
+                color: skyblue;
+            }
+            @media (min-width: 320px) and (max-width: 999px) {
+                .pages {
+                    position: fixed;
+                    right: 80px;
+                    padding-top: 10px; /* 3px in case get_verified is displayed */
+                }
+            }
+
+            #menu__toggle {
+                opacity: 0;
+            }
+            #menu__toggle:checked + .menu__btn > span {
+                transform: rotate(45deg);
+            }
+            #menu__toggle:checked + .menu__btn > span::before {
+                top: 0;
+                transform: rotate(0deg);
+            }
+            #menu__toggle:checked + .menu__btn > span::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+            #menu__toggle:checked ~ .menu__box {
+                left: 0 !important;
+            }
+            .menu__btn {
+                position: fixed;
+                top: 16px;
+                right: 30px;
+                width: 26px;
+                height: 26px;
+                cursor: grab;
+                z-index: 1;
+                padding-top: 8px;
+            }
+
+            .menu__btn > span,
+            .menu__btn > span::before,
+            .menu__btn > span::after {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 4px;
+                background-color: #ede3e3;
+                transition-duration: 0.25s;
+            }
+            .menu__btn > span::before {
+                content: "";
+                top: -8px;
+            }
+            .menu__btn > span::after {
+                content: "";
+                top: 8px;
+            }
+            .menu__box {
+                display: block;
+                position: absolute;
+                top: 8vh;
+                left: -100%;
+                width: 200px;
+                height: min-height; /*100% for viewport height*/
+                margin: 10px;
+                padding: 20px 0px;
+                background-color: #202b31;
+
+                box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+                transition-duration: 0.25s;
+                border-radius: 0px 17px 27px 0px;
+            }
+
+            .menu__box li {
+                list-style: none;
+            }
+
+            .menu__item {
+                display: block;
+                padding: 8px 30px;
+                color: #ede3e3;
+                letter-spacing: 3px;
+                font-size: 16px;
+                line-height: 1;
+                font-weight: 100;
+                text-decoration: none;
+                transition-duration: 0.25s;
+            }
+
+            #menu1 {
+                margin-bottom: 80px;
+            }
+
+            .menu__item:hover {
+                background-color: #354852;
+                color: #ffffff;
+            }
+
+            .foo__item {
+                display: block;
+                padding: 8px 30px;
+                color: #ede3e3;
+                letter-spacing: 3px;
+                font-size: 16px;
+                line-height: 1;
+                font-weight: 100;
+                text-decoration: none;
+            }
+            .foo__item:hover {
+                background-color: #354852;
+                color: #ffffff;
+            }
+
+            /****  Nav Menu Ends Here ****/
+
+            /****  Footer Menu Begins Here ****/
+
+            .footer a,
+            .footer p {
+                text-decoration: none;
+                color: rgb(151, 149, 250);
+                letter-spacing: 3px;
+                font-size: 12px;
+                font-weight: 200;
+            }
+
+            .footer {
+                text-align: center;
+                position: relative;
+                left: 0;
+                z-index: 1;
+                right: 0;
+                bottom: 1vh;
+            }
+
+            #FooterLinks {
+                font-family: "Montserrat", sans-serif;
+            }
+
+            /****  Footer Ends Here ****/
+
+            /**** Donate Box Starts Here ****/
+            #donate_box {
+                position: absolute;
+                /*top:90vh;*/
+                right: 1.5vw;
+                z-index: 2;
+            }
+
+            #donate {
+                position: relative;
+                bottom: 2vh;
+                background-color: #316e7d;
+                /*   #FDFF8F; */
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+                border: solid white;
+                border-width: 1px;
+            }
+
+            #donate a {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: "Montserrat", sans-serif;
+                font-size: 14px;
+            }
+
+            @media (min-width: 320px) and (max-width: 520px) {
+                #donate_box {
+                    display: none;
+                }
+            }
+
+            /**** Donate Box Ends Here****/
+
+            .main-section {
+                display: flex;
+                flex-direction: column; /* Stack vertically on small screens */
+                justify-content: center;
+                align-items: center;
+                height: 80vh;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            .left-section,
+            .right-section {
+                width: 100%;
+                max-width: 800px;
+            }
+            .left-section {
+                text-align: left;
+                margin-bottom: 20px;
+            }
+            .left-section h1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                font-weight: 400;
+            }
+            .left-section p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+                font-weight: 400;
+            }
+            .right-section {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            .right-section .button {
+                background-color: #28a745;
+                border: none;
+                color: #ffffff;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                cursor: pointer;
+                border-radius: 5px;
+
+                transition: background-color 0.3s;
+                text-decoration: none;
+            }
+            .right-section .button:hover {
+                background-color: #218838;
+            }
+            .about-section {
+                padding: 20px;
+                max-width: 95vw;
+                margin: 0 20px;
+                border-radius: 10px;
+                background-color: #14191e;
+            }
+            .about-content {
+                display: flex;
+                flex-direction: column; /* Stack vertically on small screens */
+                gap: 20px;
+            }
+            .about-left,
+            .about-right {
+                width: 100%;
+                max-width: 800px;
+            }
+            .about-left h2 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+                font-weight: 400;
+            }
+            .about-left p {
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+            .about-right p {
+                padding-top: 20px;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.6;
+            }
+            .features {
+                padding: 40px 20px;
+                max-width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column; /* Stack features vertically on small screens */
+                gap: 20px;
+                text-align: center;
+            }
+            .feature {
+                background-color: #272f37;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .feature h3 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                font-weight: 400;
+                text-align: left;
+            }
+            .feature p {
+                font-size: 0.9rem;
+                font-weight: 400;
+                text-align: left;
+            }
+            .why-authifyfame {
+                padding: 120px 20px;
+                max-width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column; /* Stack vertically on small screens */
+                gap: 20px;
+            }
+
+            .left-side,
+            .right-side {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .left-side h2 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+                font-weight: 400;
+            }
+
+            .left-side p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+                font-weight: 400;
+            }
+
+            .left-side .button {
+                background-color: #28a745;
+                margin-top: 20px;
+                border: none;
+                color: #ffffff;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                cursor: pointer;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background-color 0.3s;
+            }
+
+            .left-side .button:hover {
+                background-color: #218838;
+            }
+
+            .right-side {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .features-box {
+                background-color: #272f37;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .features-box ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .features-box li {
+                font-size: 1rem;
+                font-weight: 400;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+            }
+
+            .features-box li::before {
+                color: #2ecc71;
+                margin-right: 10px;
+            }
+
+            .sharable-fame-profile {
+                padding: 40px 20px;
+                max-width: 1000px;
+                margin: 0 auto;
+                text-align: left;
+                background-color: #272f37;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .sharable-fame-profile h2 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+                font-weight: 400;
+            }
+
+            .sharable-fame-profile p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+                font-weight: 400;
+            }
+            .sharable-fame-profile .button {
+                display: none;
+                background-color: #28a745;
+                border: none;
+                color: #ffffff;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                cursor: pointer;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background-color 0.3s;
+            }
+            .faq {
+                border: 1px grey solid;
+                padding: 40px 20px;
+                max-width: 1000px;
+                margin: 20px auto;
+                text-align: center;
+            }
+
+            .faq h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                font-weight: 400;
+                color: goldenrod;
+            }
+
+            .faq-container {
+                display: flex;
+                margin: 10px;
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .faq-item {
+                border: 1px solid white;
+                padding: 20px;
+                border-radius: 8px;
+                width: 100%;
+                max-width: 600px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                text-align: left;
+            }
+
+            .faq-item summary {
+                font-size: 1rem;
+                font-weight: 400;
+                cursor: pointer;
+                margin-bottom: 10px;
+            }
+
+            .faq-item p {
+                font-size: 1rem;
+                font-weight: 400;
+                margin: 0;
+                padding-top: 10px;
+                line-height: 1.5;
+            }
+
+            @media (min-width: 768px) {
+                .main-section {
+                    flex-direction: row; /* Horizontal layout on larger screens */
+                    padding: 20px 100px;
+                    margin: 10px;
+                }
+                .left-section {
+                    max-width: 50%;
+                    text-align: left;
+                }
+                .right-section {
+                    max-width: 50%;
+                    text-align: right;
+                }
+                .about-section {
+                    padding: 20px;
+                    max-width: 95vw;
+                    margin: 0 60px;
+                    border-radius: 10px;
+                    background-color: #14191e;
+                }
+                .about-content {
+                    padding: 40px;
+                    padding-top: 20px;
+                    flex-direction: row; /* Horizontal layout on larger screens */
+                    gap: 40px;
+                }
+                .about-left,
+                .about-right {
+                    padding-top: 20px;
+                    max-width: 50%;
+                }
+                .about-right {
+                    padding-top: 40px;
+                }
+                .features {
+                    flex-direction: row; /* Arrange features horizontally on larger screens */
+                    flex-wrap: wrap;
+                    gap: 30px;
+                }
+                .feature {
+                    flex: 1 1 calc(33.333% - 30px);
+                    max-width: calc(33.333% - 30px);
+                }
+                .why-authifyfame {
+                    padding: 150px 50px;
+                    flex-direction: row;
+                    gap: 20px;
+                }
+                .left-side,
+                .right-side {
+                    width: 50%;
+                }
+                .sharable-fame-profile {
+                    padding: 60px 30px;
+                }
+                .faq {
+                    margin-top: 90px;
+                    padding: 60px 30px;
+                }
+            }
         </style>
     </head>
-
     <body>
-
-        <nav>		
+        <nav>
             <div class="logo">
-                <a href="https://fame.authifyweb.com"><span style="color:#EDE3E3;"> authify</span><span style="color:#a2fb15;">Fame</span></a><span class="brand_arch"> by authifyWeb.com</span>
-                </div> 
-            
+                <a href="https://fame.authifyweb.com"><span style="color: #ede3e3;"> authify</span><span style="color: #a2fb15;">Fame</span></a><span class="brand_arch"> by authifyWeb.com</span>
+            </div>
+
             <div class="pages">
                 <div class="dropdown">
-                  <button class="dropbtn">📌 About <sub> <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="skyblue"><path d="M7 10l5 5 5-5"/></g></svg></sub></button>
-                  <div class="dropdown-content">
-
-                  <a href="./about.html">About</a>
-                  <a href="../pages/get-listed.html" >Get Verified</a>
-                  <a href="https://authifyweb.com/pages/contribute.html" target="_blank">Get Involved</a>
-                  <a href="https://authifyweb.com/pages/donate.html" style="background-color:#316e7d; font-style: italic; font-weight: bold; color:#fff;">💰 Donate</a>
-                  </div>
+                    <button class="dropbtn">
+                        📌 About
+                        <sub>
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="skyblue"><path d="M7 10l5 5 5-5" /></g>
+                            </svg>
+                        </sub>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="../pages/about.html">About</a>
+                        <a href="../pages/get-listed.html">Get Listed</a>
+                        <a href="https://authifyweb.com/pages/contribute.html" target="_blank">Get Involved</a>
+                        <a href="https://authifyweb.com/pages/donate.html" style="background-color: #316e7d; font-style: italic; font-weight: bold; color: #fff;">💰 Donate</a>
+                    </div>
                 </div>
-              </div>
+            </div>
             <div class="hamburger-menu">
                 <input id="menu__toggle" type="checkbox" />
                 <label class="menu__btn" for="menu__toggle">
                     <span> </span>
                 </label>
-                
-                <ul class="menu__box">
-                    <ul>	
-                        <div id="menu1">
-                        <li><a class="menu__item" href="https://authifyweb.com">Home</a></li>
-                        <li><a class="menu__item" href="https://chat.authifyweb.com"><span style="color:#EDE3E3;"> authify</span><span style="color:#a2fb15;">Chat</span></a></li>
-                        <li><a class="menu__item" href="https://url.authifyweb.com"><span style="color:#EDE3E3;"> authify</span><span style="color:#a2fb15;">URL</span></a></li>
-                        <li><a class="menu__item" href="https://fame.authifyweb.com"><span style="color:#EDE3E3;"> authify</span><span style="color:#a2fb15;">Fame</span></a></li> 
-                        <li><a class="menu__item" href="https://now.authifyweb.com"><span style="color:#EDE3E3;"> authify</span><span style="color:#a2fb15;">Now</span></a></li>
-                        
-                        <li><a class="menu__item" target="_blank" style="background-color:#FFC800; color:black; font-style:italic; font-weight:bold" href="https://github.com/webVerts#donate">Donate Now</a></li>
-                        <li><a class="menu__item"  style="background-color:skyblue; color:black; margin-top:5px;font-style:strong;  font-weight:bold" href="../pages/get-listed.html">Get Verified</a></li>
 
+                <ul class="menu__box">
+                    <ul>
+                        <div id="menu1">
+                            <li><a class="menu__item" href="https://authifyweb.com">Home</a></li>
+                            <li>
+                                <a class="menu__item" href="https://chat.authifyweb.com"><span style="color: #ede3e3;"> authify</span><span style="color: #a2fb15;">Chat</span></a>
+                            </li>
+                            <li>
+                                <a class="menu__item" href="https://url.authifyweb.com"><span style="color: #ede3e3;"> authify</span><span style="color: #a2fb15;">URL</span></a>
+                            </li>
+                            <li>
+                                <a class="menu__item" href="https://fame.authifyweb.com"><span style="color: #ede3e3;"> authify</span><span style="color: #a2fb15;">Fame</span></a>
+                            </li>
+                            <li>
+                                <a class="menu__item" href="https://now.authifyweb.com"><span style="color: #ede3e3;"> authify</span><span style="color: #a2fb15;">Now</span></a>
+                            </li>
+
+                            <li><a class="menu__item" style="background-color: #ffc800; color: black; font-style: italic; font-weight: bold;" href="https://authifyweb.com/pages/donate">Donate Now</a></li>
+                            <li><a class="menu__item" style="background-color: skyblue; color: black; margin-top: 5px; font-style: strong; font-weight: bold;" href="../pages/get-listed.html">Get Listed</a></li>
                         </div>
-                        
                     </ul>
                     <ul>
                         <div id="menu2">
-                        <li><a class="foo__item" target ="_blank" href="https://authifyweb.com/pages/privacy">Privacy</a></li>		
-                        <li><a class="foo__item" target ="_blank" href="https://authifyweb.com/pages/disclaimer">Disclaimer</a></li>
-                        <li><a class="foo__item" target ="_blank" href="https://authifyweb.com/pages/terms">Terms</a></li>
-                        
-                        <li><a class="foo__item" target ="_blank" href="https://github.com/authifyWeb/fame-Frontend">Github</a></li>
+                            <li><a class="foo__item" target="_blank" href="https://authifyweb.com/pages/privacy">Privacy</a></li>
+                            <li><a class="foo__item" target="_blank" href="https://authifyweb.com/pages/disclaimer">Disclaimer</a></li>
+                            <li><a class="foo__item" target="_blank" href="https://authifyweb.com/pages/terms">Terms</a></li>
+
+                            <li><a class="foo__item" target="_blank" href="https://github.com/authifyWeb/fame-Frontend">Github</a></li>
+                        </div>
                     </ul>
                 </ul>
             </div>
-        </nav>   
-        
-    <div class="main_container">    
-    <h1 class="title">What is authifyFame? </h1>
-    <div class="hero">
-    <p><em><a href="https://fame.authifyweb.com">authifyFame</a> is an open-source project which helps in safeguarding brand image for celebrities, founders and influencers by empowering and educating your followers to verify first whether a website or social media profile truly belongs to them, ensuring a secure and trusted online experience. Users can easily determine whether a website belongs to their favourite personality or if it's potentially fraudulent and celebs can make sure their followers are interacting with their official websites and social profiles.  </em> </p>
-    <br>
-    <p>In today's digital landscape, celebrities and famous personalities are increasingly facing impersonation and scams that exploit their names and reputations. With global data leaks, illicit trade of personal information, increasing cyber threats worldwide, the risk of falling victim only seems to escalate, posing a significant threat to both celebrities and their followers. We are tackling this issue right at the core. Using our platform, users can easily verify whether a website belongs to a specific individual or if it's potentially fraudulent, and celebrities can make sure their followers are visiting their official websites and social media profiles rather than engaging with scammers.</p>
-    <br>
+        </nav>
 
-    <h4> What does authifyFame stands for </h4>
-    <h5 div class="trustedbadge">
-      <ul>
-        <li>It is a sign of Quality & TRUST</li>
-        <li>It shows your commitment towards your fan base.</li>
-        
-      </ul>
-    </h5>
-   <br>
-    <p>Today, even tech-savvy individuals find experiencing moments of hesitation and doubt when it comes to making online payments. It's natural to question the authenticity of websites and worry about falling victim to scams. Now, imagine the plight of those who are not familiar with the intricacies of the internet or the prevalence of these types of scams. There is a significant portion of the population who may not be internet and tech-savvy, or they may not even be aware of the potential dangers lurking online. They may not have heard about the scams that target unsuspecting individuals, making them vulnerable to financial losses. </p>
+        <div style="height: 10vh;"></div>
 
-    <blockquote><em>We help to protect the trust of followers for their beloved celebrities and influencers! In a world where people trust them as their own, our verification tool prevents the followers from falling victim to scams by ensuring that their donations and support go to the genuine causes and profiles.</em></blockquote>
+        <!-- Main Section -->
+        <div class="main-section">
+            <!-- Left Section -->
+            <div class="left-section">
+                <p style="font-size: 12px; text-transform: uppercase;">What is authifyFame</p>
+                <h1>Spotting Celebrity Impersonation Scams Made Simple</h1>
+                <p>Empower your fans to identify scams that impersonate you. Make it easy for them to verify your websites, social media, and much more.</p>
+            </div>
 
-    <p>With authifyFame we are not attempting to revolutionize the field or introduce something entirely new. Instead, we prioritize making today's internet safer and more secure through a centralized database approach. We strives to assist those who may face difficulties in an area that may seem ordinary to others. By providing a user-centric and easily accessible platform, <a href="https://fame.authifyweb.com/">authifyFame</a> aims to bring about positive change for internet users who may otherwise find themselves at a disadvantage.  </p>
-        </br>
-    <h1 class="features"> Why Use authifyFame?</h1>
-    <blockquote><em>Celebrities, StartUp Founders, Open Source Developers, Influencers  and other internet users, all can use authifyFame service to the maximum.</em></blockquote>
+            <!-- Right Section -->
+            <div class="right-section">
+                <p><a href="../pages/get-listed.html" class="button"> Create Your authifyFame Profile</a></p>
+            </div>
+        </div>
 
-    <h4><em>Helping Internet Users Stay Secure:</em></h4>
-    <p>One of the primary advantages of using authifyFame is its ability to assist internet users in distinguishing between real as well as fake websites and profiles. With the majority of users discovering websites through search engines, the risk of encountering fraudulent links on search engine results pages (SERPs) is high. By leveraging authifyFame, users can proactively verify the authenticity of a website or social media profile before engaging with it, ensuring they don't fall victim to scams or deceptive online practices. </p>
+        <!-- About Us Section -->
+        <div class="about-section">
+            <div class="about-content">
+                <div class="about-left">
+                    <p style="font-size: 12px; text-transform: uppercase;">What authifyFame Stands For</p>
+                    <h2>Safeguarding Your Digital Reputation</h2>
 
-    <h4><em>A User-Friendly Approach:</em></h4>
-    <p>By focusing to prioritize the needs of users, especially those who may not be familiar with complex technical processes. The tool's user-friendly interface eliminates any barriers to entry, ensuring that individuals from all backgrounds can benefit from its features. Users simply need to visit the authifyFame website, without the hassle of account creation or extensive personal information collection. Moreover, privacy is paramount, and we prioritizes user data protection by refraining from tracking or storing personal information. In addition to that, to improve the website, we opted to use the Privacy-first Cloudflare Analytics, which provides an additional layer of protection and peace of mind for users.</p>
-    <p>We offer a minimalistic design that is fast and accessible to all, without any cost, ads, or invasive tracking. Alongside our user-friendly interface, the intuitive search functionality allow users to quickly search for their favorite personalities and submit URLs for verification. We value your time and strive to deliver prompt results. You can use our service with confidence, knowing that your privacy is protected. We prioritize your security and aim to create a secure environment for verification.</p>
-    
-    <h4><em>Creating a Safer Online Culture:</em></h4>
-    <p>With every user who adopts the practice of verifying URLs and profiles, we contribute to the development of a safer online culture. Our goal is to cultivate an behaviour that values authenticity, privacy, and protection against scams. By using authifyFame platform, you actively participate in creating a better and safer internet for everyone. </p>
+                    <p>authifyFame stands as the guardian of authenticity for celebrities and influencers.</p>
+                </div>
 
-    <h3>For Celebs, Influencers & Founders</h3>
-    <blockquote><em>As an influential figure, authifyFame helps you become more responsible and trustworthy in the eyes of your fans, fostering a stronger and more authentic connection with your audience. By promoting the verification of online profiles, you not only promote safeguarding against scams but also contribute to creating a better internet safety and culture, where trust, authenticity, and security thrive.</em> </blockquote>
+                <div class="about-right">
+                    <p>authifyFame Profile Cards offer a unique and secure space where users can verify your online presence, ensuring your fans connect with the real you.</p>
+                </div>
+            </div>
 
-    <p>As an individual Brand, you understand the importance of ensuring a safe and trustworthy online experience for your valued followers. With our service, provides your followers with the tools they need to make informed decisions and protect themselves from potential scams or fraudulent activities. By prioritizing verification, we are building a stronger bond of trust for your brand with your followers, assuring them that their online interactions with your brand are secure. </p>
-    <p>By encouraging users to first verify the authenticity of online profiles before engaging, our platform not only safeguards against online scams related to celebrities but also indirectly instills a habit of verification. This not only helps followers avoid falling victim to scams associated with celebrities but also protects them from online scams related to companies & brands, ensuring a safer and more secure online experience for all. </p>
+            <section class="features">
+                <div class="feature">
+                    <h3>Quality & Trust</h3>
+                    <p>authifyFame is a sign of quality and trust, showing your commitment towards your fan base.</p>
+                </div>
+                <div class="feature">
+                    <h3>Free & User-Friendly</h3>
+                    <p>Our interface is designed to be simple and freely accessible for everyone to verify links.</p>
+                </div>
+                <div class="feature">
+                    <h3>Web-Based</h3>
+                    <p>authifyFame is entirely web-based. No need to install anything, users can access the site anytime from any device.</p>
+                </div>
+            </section>
 
-    <h4><em>Protecting Your Brand Reputation and Customer Trust:</em></h4>
-    <p>authifyFame offers significant benefits to influencers and celebs by safeguarding their reputation and trust fans have in them. With the rise of personal data breaches and increasing instances of scam calls and messages, individuals like you face a higher risk of fraudulent websites na social media profiles operating under your name, so customers need reassurance that they are interacting with legitimate websites. By utilizing authifyFame, you can minimize the risk of their followers falling for fake websites operating under their name. This proactive approach bolsters your brand image, as your followers can confidently trust that the verified website is the official and trusted source.</p>
+            <p style="color: goldenrod; text-align: center; font-size: 16px;">You focus on building your brand, we'll ensure its digital reputation remains safeguarded.</p>
+        </div>
 
-    <h4><em>Streamlining Your Brand Protection Efforts:</em></h4>
-    <p>In addition to protecting brand reputation, authifyFame simplifies the process of brand protection. You no longer need to constantly remind your foillwers through tweets or messages about all your official websites and social media profiles. The project reduces the need for influencers to continuously monitor and combat fake websites and profiles with similar names. Consequently, even celebs who like to have a private digital life can feel secure in their online presence without having to invest time and energy in different social-media profiles or worry about similar-looking websites diluting their brand's trustworthiness. Users can easily verify if the account belongs to the celebrity.</p>
+        <section class="why-authifyfame">
+            <div class="left-side">
+                <p style="font-size: 12px; text-transform: uppercase;">Features & More</p>
+                <h2>Why authifyFame Profile Card?</h2>
+                <p>By safeguarding your fans, you build a reputation of trust and integrity for your brand.</p>
 
-    <h4><em>Boosting Trust and Convenience for Users towards your brand:</em></h4>
-    <p>With authifyFame, users benefit from increased trust and convenience. Instead of remembering numerous official profiles for each celebs, users can rely on a single source: authifyFame. The straightforward verification process ensures consistent and reliable results for all brands, enabling users to quickly verify website authenticity whenever they have doubts. By providing this user-friendly and trustworthy platform, authifyFame empowers individuals to navigate the web safely and with confidence. </p>
+                <p><a href="../pages/get-listed.html" class="button"> Create Your authifyFame Profile</a></p>
+            </div>
 
-    <h4><em>Collaboration and Advocacy:</em></h4>
-    <p>We actively collaborate with celebrities, influencers, and online platforms to combat impersonations and scams. By working together, we advocate for stronger measures against fraudulent activities and promote a safer internet environment. Our efforts encourage other entities to prioritize user safety and implement measures to prevent scams.</p>
-    <br><br>
-    <p>The use of authifyFame complements the existing blue ticks and verified profiles. While these markers of authenticity can be often limited to individual social media profiles, authifyFame offers a more comprehensive solution. Our platform allows users to verify not only social media profiles but also personal websites, Patreon links, donation platforms, and more. By expanding the scope of verification, authifyFame provides users with a holistic view of an influencer's online presence, ensuring a higher level of trust and protection against scams across various platforms and channels. </p>
-    
-    <br>
+            <div class="right-side">
+                <div class="features-box">
+                    <ul>
+                        <li>&#10003; &nbsp;Instant URL Verification</li>
+                        <li>&#10003; &nbsp;Unlimited Personal Sites</li>
+                        <li>&#10003; &nbsp;30+ Third-Party Websites</li>
+                        <li>&#10003; &nbsp;Support for Multiple Platforms</li>
+                        <li>&#10003; &nbsp;Safeguard Online Reputation</li>
+                        <li>&#10003; &nbsp;Personal Verification Pages</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <p><em>Note: The purpose of this project is not to promote you, or your social media profiles, but rather empower internet users to easily identify scams and fake profiles, that impersonates you & exploit your brand reputation. </em></p>
-</div>
-</div>
+        <section class="sharable-fame-profile">
+            <p style="font-size: 12px; text-transform: uppercase;">Commitment towards followers</p>
+            <h2>
+                Sharable Fame Profile Card
+                <svg fill="#87ceeb" width="30" height="30" viewBox="0 0 24 24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m21.707 11.293-8-8A1 1 0 0 0 12 4v3.545A11.015 11.015 0 0 0 2 18.5V20a1 1 0 0 0 1.784.62 11.46 11.46 0 0 1 7.887-4.049c.05-.006.175-.016.329-.026V20a1 1 0 0 0 1.707.707l8-8a1 1 0 0 0 0-1.414M14 17.586V15.5a1 1 0 0 0-1-1c-.255 0-1.296.05-1.562.085a14 14 0 0 0-7.386 2.948A9.013 9.013 0 0 1 13 9.5a1 1 0 0 0 1-1V6.414L19.586 12Z"
+                    />
+                </svg>
+            </h2>
+            <p>Share your authifyFame Profile Card across all your social platforms and bios to ensure your fans can easily avoid scams.</p>
+            <p>Your profile card is designed to be easily accessible, fast and sharable, making it effortless for your audience to connect with the authentic you.</p>
+            <p>Safeguards your brand reputation & protects your followers from falling into financial frauds.</p>
+            <p><a href="../pages/get-listed.html" class="button"> Create Your authifyFame Profile</a></p>
+        </section>
 
-<div class="footer"> 
-           
-    <div id="FooterLinks">
-        <span><a href="https://authifyweb.com/pages/privacy" target="_blank"> Privacy </a> </span> &nbsp; <span><a href="https://authifyweb.com/pages/disclaimer" target="_blank"> Disclaimer</a></span> &nbsp; <span><a href="https://authifyweb.com/pages/terms" target="_blank"> Terms</a></span>
-        <p>  &copy; <a href="https://authifyweb.com" > authifyWeb.com</a> </p>
-        
-    </div>
- </div>  
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <details class="faq-item">
+                    <summary>What is authifyFame Profile Card?</summary>
+                    <p>
+                        authifyFame Profile card is a free web-based tool that helps users easily identify scams sites and profiles impersonating as celebrities. It helps celebrities, influencers, and digital creators safeguard their online
+                        reputation by ensuring that their fans are interacting with the genuine accounts.
+                    </p>
+                    <p>authifyFame stands as the guardian of authenticity for celebrities and influencers.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Who should register for an authifyFame Profile Card?</summary>
+                    <p>Any individual or person who believes they have a digital reputation to manage, should definitely have a authifyFame profile page.</p>
 
+                    <p>
+                        You could be a journalist, or an cartoonist. A influencer or a movie actor. Start-up owners, corporate exectives, freelancers, authors, designers or curators. If you have a brand reputation to mange, you should have
+                        an profile with us.
+                    </p>
 
+                    <p>
+                        Once you get a verified profile, you don't have to worry about monitoring for fake websites; you can simply add your real websites and social media sites here, and anything fake will be shown as fake. Even if you are
+                        not online 24/7 to respond to verification queries from fans, authifyFame acts as an auto-respondent to verify links, ensuring continuous protection and trust, safeguarding your digital reputation.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Why should you have an authifyFame Profile Card?</summary>
+                    <p>
+                        If you are a creator or a influencer, you are a brand. Scammers are always around to misuse your digital identity and impersonate your brand to run scams. authifyFame profiles make sure your fans or followers or even
+                        the general public know which are your authentic social media profile and which are fake and scammy.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>How to get a verified authifyFame Profile?</summary>
+                    <p>
+                        All authifyFame users are manually verified and then listed to prevent impersonation. When you register with us, we ask for your photo identification with a Gov issued ID. Get registered
+                        <a href="../pages/get-listed.html" style="color: skyblue;" ;>here</a>.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Should I share my authifyFame Profile URL on social media sites?</summary>
+                    <p>Yes. This will give maximum advantage for followers who follow you on one profile to verify any other links. Your social media bios are the most suitable place to share authifyFame profile links.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is authifyFame URL verification free?</summary>
+                    <p>Yes, Your fans and followers can verify any links of yours without any fee.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>How does the URL verification work?</summary>
+                    <p>
+                        Once you register for an authifyFame Profile Card, you'll receive a dedicated profile page where your fans can submit URLs for verification. We check these URLs against the links you’ve provided and inform your fans
+                        if the URL is verified or a scam.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is my data secure?</summary>
+                    <p>
+                        Yes, we prioritize your privacy and data security. We store all required information and ensure that all data is handled with the utmost confidentiality. Your ID we use for verification are deleted from our servers 7
+                        days after the verification is complete. If you delete your account and later create it again, you'll have to verify again from the start. Check our
+                        <a href="https://authifyweb.com/pages/terms" style="color: skyblue;" ;>terms</a> and <a href="https://authifyweb.com/pages/privacy" style="color: skyblue;" ;>privacy policy</a> for more details.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I update my profile information?</summary>
+                    <p>Absolutely! You can update your profile information and links at any time through your authifyFame dashboard to ensure that your fans always have the latest and most accurate information.</p>
+                </details>
+            </div>
+        </section>
 
+        <div class="footer">
+            <div id="FooterLinks">
+                <span><a href="https://authifyweb.com/pages/privacy" target="_blank"> Privacy </a> </span> &nbsp; <span><a href="https://authifyweb.com/pages/disclaimer" target="_blank"> Disclaimer</a></span> &nbsp;
+                <span><a href="https://authifyweb.com/pages/terms" target="_blank"> Terms</a></span>
+                <p>&copy; <a href="https://authifyweb.com"> authifyWeb.com</a></p>
+            </div>
+        </div>
+        <p id="donate_box">
+            <span id="donate">
+                <a href="https://authifyweb.com/pages/donate"><i>Donate Now</i></a>
+            </span>
+        </p>
     </body>
-
-    </html>
+</html>

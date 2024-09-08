@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Primary Meta Tags -->
+<!-- Meta Tags -->
 <title>Real/Fake? Verify Celebs Profiles & Websites | authifyFame</title>
 <meta name="title" content="Real/Fake? Verify Celebs Profiles & Websites | authifyFame" />
-<meta name="description" content="Unmask fake fame instanly| authifyFame | Your shield against phishing & imposter accounts impersonating Celebs, Creators & Influencers." />
+<meta name="description" content="Unmask fake fame instantly | authifyFame Profile Card | Your shield against phishing & imposter accounts impersonating Celebrities, Creators & Influencers." />
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://fame.authifyweb.com" />
 <meta property="og:title" content="Real/Fake? Verify Celebs Profiles & Websites | authifyFame" />
-<meta property="og:description" content="Unmask fake fame instanly| authifyFame | Your shield against phishing & imposter accounts impersonating Celebs, Creators & Influencers." />
+<meta property="og:description" content="Unmask fake fame instantly | authifyFame Profile Card | Your shield against phishing & imposter accounts impersonating Celebrities, Creators & Influencers." />
 <meta property="og:image" content="https://raw.githubusercontent.com/authifyWeb/Fame-Frontend/main/images/android-chrome-512x512.png">
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:card" content="summary" />
+<meta name="twitter:site" content="@authifyFame">
 <meta property="twitter:url" content="https://fame.authifyweb.com" />
 <meta property="twitter:title" content="Real/Fake? Verify Celebs Profiles & Websites | authifyFame" />
-<meta property="twitter:description" content="Unmask fake fame instanly| authifyFame | Your shield against phishing & imposter accounts impersonating Celebs, Creators & Influencers." />
+<meta property="twitter:description" content="Unmask fake fame instantly | authifyFame Profile Card | Your shield against phishing & imposter accounts impersonating Celebrities, Creators & Influencers." />
 <meta property="twitter:image" content="https://raw.githubusercontent.com/authifyWeb/Fame-Frontend/main/images/android-chrome-512x512.png">
 
 <meta name="google-site-verification" content="D6Q4n8azCjI14o-iCcXxn0r3_xZ-3r7wzBaz25y_Clw" />
@@ -29,6 +30,8 @@
 <link rel="me" href="https://mastodon.social/@authifyfame">
 <link rel="stylesheet" href="resources/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeahead-standalone@4.21.0/dist/basic.css" />
+<script src="https://cdn.jsdelivr.net/npm/typeahead-standalone@4.21.0/dist/typeahead-standalone.js" ></script>
+
 
 </head>
     <body>
@@ -42,7 +45,7 @@
 				  <button class="dropbtn">📌 About <sub> <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="skyblue"><path d="M7 10l5 5 5-5"/></g></svg></sub> </button>
 				  <div class="dropdown-content">
 				  <a href="./pages/about.html" >About</a>
-				  <a href="../pages/get-listed.html">Get Verified</a>
+				  <a href="./pages/get-listed.html">Get Verified</a>
 				  <a href="https://authifyweb.com/pages/contribute.html" target="_blank">Get Involved</a>
 				  <a href="https://authifyweb.com/pages/donate.html" style="background-color:#316e7d; font-style: italic; font-weight: bold; color:#fff;">💰 Donate</a>
 				  </div>
@@ -76,44 +79,127 @@
 						<li><a class="foo__item" target ="_blank" href="https://authifyweb.com/pages/terms">Terms</a></li>
 						
 						<li><a class="foo__item" target ="_blank" href="https://github.com/authifyWeb/fame-Frontend">Github</a></li>
-					</ul>
+						</div></ul>
 				</ul>
 			</div>
         </nav>
 
-		<script src="https://cdn.jsdelivr.net/npm/typeahead-standalone@4.21.0/dist/typeahead-standalone.js"></script>
-            <div class="main_container" >
-			
-                <h3 style=" color:#a2fb15;">Check the Profile authenticity 🎇</h3>
-                <div class="hero">
-                <div class="input-container" style="background-color:#1f282d;" >
-                    <input type="text" autofocus class="searchterm" autocomplete="off" placeholder="Search for Name / Username.(Eg: webVerts)"  > 
-                </div>
-			</div>
-                <p id="compatible"> ** Safeguarding reputation of creators and celebrities. </p>
-				<p id="verify_your_profile"> <a href="../pages/get-listed.html">Trusted by over 100 creators. Be part of the growing movement - sign up today.</a> </p>
-                <div class="output" id="output">
-                    <p id="naam"></p>  
-                </div>
-                
-                <span id="input_form"></span> <span id="input_btn"></span>
-				<div id="error_message" style="color: red; "></div>
-                <p id="data"></p>
-				<p id="official"></p>
-			    <p id="disclaimer" style="background: color #1f281f;"></p>
-                
-				
-                <p id="no_promote">This project is still in Beta.<br>This is a simple URL verification tool. We do not directly or indirectly endorse or promote any person or any of their content. </p>
-            </div>
-			<div class="bgimg">
-			<img src="images/workingnights.png" height=280px;>
-			</div>
-			
-			
-			
-			
-			
 		
+		<section class="main-section">
+			<div class="container">
+			  <div class="left-section">
+				<div class="search-form">
+				 
+				  <h2>One profile to verify every link.</h2>
+				  <form id="profileForm" method="get">
+					<div class="input-container" style="background-color:#1f282d;">
+					  <input type="text" autofocus class="searchterm" id="searchInput" autocomplete="off" placeholder="Search for Name / Username.(Eg: webVerts)">
+					</div>
+					<button type="submit" id="goToProfileButton">View Profile</button>
+				  </form>
+				  <p id="verification-msg">Verifications are free for everyone.</p>
+				</div>
+			  </div>
+			  <div class="right-section">
+				<div class="content">
+				  <a href="./pages/get-listed.html" class="btn">Create Your Verified Profile</a>
+				</div>
+			  </div>
+			</div>
+		  </section>
+		  
+		  <section class="second-section">
+			<div class="container">
+			  <div class="left-section">
+				<h2>Safeguard Your Digital Reputation</h2>
+				<p>Make it easy for your audience to verify your websites, social media, and much more.</p>
+				<p>By safeguarding your fans, you build a reputation of trust and integrity for your brand.</p>
+				
+				<a href="./pages/get-listed.html" class="btn">Create Your Verified Fame Profile</a>
+			  </div>
+			  <div class="right-section">
+				<div class="features">
+				  
+				  <ul>
+					<li>&#10003; &nbsp;Instant Verification</li>
+					<li>&#10003; &nbsp;Unlimited Personal Sites</li>
+					<li>&#10003; &nbsp;30+ Third-Party Websites</li>
+					<li>&#10003; &nbsp;Support for Multiple Platforms</li>
+					<li>&#10003; &nbsp;Safeguard Online Reputation</li>
+					<li>&#10003; &nbsp;Personal Verification Pages</li>
+					<br>
+					<li>&mdash; &nbsp; <a href="./pages/about.html" style="color:skyblue; text-decoration:none;"> Learn More</a></li>
+				  </ul>
+				</div>
+				
+			  </div>
+			</div>
+			<p style="color:goldenrod; margin: 0 20px;">You focus on building your brand, we'll ensure its digital reputation remains safeguarded.</p>
+		  </section>
+		 <!-- 
+		  <section class="rotate-section">
+			<div class="rotate_container">
+			  <div class="rotate-text">
+				<h3>TRUSTED BY</h3>
+				
+				
+				<p id="category"></p>
+				
+				<a href="./pages/get-listed.html" class="btn">Create Your Verified Profile</a>
+			  </div>
+			</div>
+		  </section>
+		  -->
+		  <section class="faq-section">
+			<div class="faq-container">
+				  <h2>Frequently Asked Questions</h2>
+				  
+				  <details>
+					  <summary>What is an authifyFame Profile Card?</summary>
+					  <p>authifyFame Profile Card is a free online service to easily verify websites and social media sites of celebrities, influencers and other creators. </p>
+					  <p>It helps celebrities, influencers, and digital creators safeguard their online reputation by ensuring that their fans are interacting with the genuine accounts.</p>
+				  </details>
+				  <details>
+					  <summary>How secure is authifyFame Profile Card?</summary>
+					  <p>We never ask for anything from you as a visitor. When you visit an authifyFame profile page, it fetches data from our server and locally saves on your device. Once you submit the link, it verifies on your device and no data is send to our server.</p>
+					  <p>The data that is used to verify is submitted directly by the creators.</p>
+				  </details>
+				  <details>
+					  <summary>Is verification free?</summary>
+					  <p>Yes. This platform is provided for free, intended to help identify scam easily. Though you could always donate <a href="https://authifyweb.com/pages/donate"> here</a>.</p>
+				  </details>
+				  
+				  <details>
+					  <summary>Can I access authifyFame Profile Card from multiple devices?</summary>
+					  <p>Yes. Our profile pages are simply fast and well optimised for all devices. You can use our services from multiple devices at a time, as long as you dont misuse our services.</p>
+				  </details>
+				  <details>
+					<summary>Is authifyFame Profile Card just another linkinbio page?</summary>
+					<p>No. While Linkinbio is a great tool for adding external links to your social media profiles, an authifyFame profile card is a powerful external addon that works seamlessly with most Linkinbio pages.</p>
+					<p><i>We only focus on making website verification reliable & faster for your followers.</i></p>	
+					<p>authifyFame make it easy for your followers to verify the authenticity of websites and social media sites that may pop up anytime, including those that immediately impersonate your brand identity. With authifyFame, your audience can easily verify whether these sites actually belong to you as a creator. </p> <p>This means creators don't have to worry about monitoring for fake websites; they can simply add their real websites here, and anything fake will be shown as fake. Even if the creator is not online 24/7 to respond to verification queries from fans, thier authifyFame Profile Card acts as an auto-respondent to verify links, ensuring continuous protection and trust.</p>
+				</details>
+				<details>
+					<summary>For whom is authifyFame profiles useful?</summary>
+					<p>Any individual or person who believes they have a digital reputation to manage, should definitely have a authifyFame profile card.</p>
+						
+					<p>You could be a journalist, or an cartoonist. A influencer or a movie actor. Start-up owners, corporate exectives, freelancers, authors, designers or curators. If you have a brand reputation to mange, you should have an profile with us.</p> 
+					
+					<p>Once you get a verified profile, you don't have to worry about monitoring for fake websites; you can simply add your real websites and social media sites here, and anything fake will be shown as fake. Even if you are not online 24/7 to respond to verification queries from fans, your authifyFame profile card acts as an auto-respondent to verify links, ensuring continuous protection and trust, safeguarding your digital reputation.</p>
+				</details>
+				<details>
+					<summary>How can you get an authifyFame Profile Card?</summary>
+					<p>Any individual or person who believes they have a digital reputation to manage, should definitely have a authifyFame profile card.</p>
+						
+					<p>Join our waiting list <a href=".pages/get-listed.html">here</a>.</p> 
+					
+					<p>To ensure the authenticity of our users and prevent impersonation, we manually verify each account; please be patient during this process</p>
+				</details>
+				  
+				  
+			  </div>
+			  
+		  </section>
 
         <div class="footer"> 
            
@@ -128,7 +214,19 @@
         </div>
             <p id="donate_box"><span id ="donate"> <a href="https://authifyweb.com/pages/donate" ><i>Donate Now</i></a></span> </p>
 
-        <script  src="resources/script.js" type="module"></script> 
+        <script  src="resources/script.js" ></script> 
+		<script>
+
+
+		</script>
     </body>
 
 </html>    
+
+
+<!-- Credits
+Typeahead-Standalone: https://github.com/digitalfortress-tech/typeahead-standalone by Niket Pathak (MIT).
+Loader or the svg spinner is modified from the works of Utkarsh Verma https://github.com/n3r4zzurr0/svg-spinners (MIT).
+
+
+-->
