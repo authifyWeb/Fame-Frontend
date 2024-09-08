@@ -540,7 +540,13 @@ nav {
   padding-left: 15px;
   justify-content: space-around;
   color: #fff;
+  line-height:1.6em;
   /* Text color for paragraphs */
+}
+
+.faq-section ul{
+  margin:0 60px;
+  line-height:1.6em;
 }
 
 @media (max-width: 920px) {
