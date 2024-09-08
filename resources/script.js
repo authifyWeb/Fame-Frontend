@@ -1,7 +1,7 @@
-import { filtering } from './filters.js';
+
 
 const el = document.querySelector(".searchterm");
-var authData;
+
 
 
 /* Initialising typeahead-standalone.js: https://typeahead.digitalfortress.tech/ */
@@ -10,7 +10,7 @@ typeahead({
     input: el,
     source: {
     remote: {
-        url: "https://apifame.vercel.app/api/products?alias=%QUERY&select=alias,name,urls,logo,cat,origin,bg", 
+        url: "https://fameapi.authifyweb.com/api/products?alias=%QUERY&select=alias,name,urls,logo,cat,origin,bg,acc", 
 		wildcard: "%QUERY",
     requestOptions: {}
   },
@@ -37,7 +37,7 @@ debounceRemote: 300,
 highlight: true,
 className: 'typeahead-sgst',
 minLength: 3,
-preventSubmit: false,
+preventSubmit: true,
 limit:25,
 hint: false,
 autoSelect: false,
@@ -61,175 +61,46 @@ loader: () => '<div style="text-align: center"><img src="images/loader.svg" /></
   return `<div style="font-size:12px;">Enter the Name and click enter</div>`;
     },*/
 },
-
-onSubmit: (e, selectedSuggestion) => {
- 
-if (selectedSuggestion) {
-
-   //Clear previous data 
-   data.innerHTML = "";
-   disclaimer.innerHTML = "";
-   error_message.innerHTML="";
- 
-const myJSON = JSON.stringify(selectedSuggestion);
-const outp=JSON.parse(myJSON);
-const {name, urls,type,id,official} = outp;
-console.log(myJSON)
-//console.log(outp)
-authData=outp;
-
-//document.getElementById('output').innerHTML ="";
-document.getElementById("compatible").innerHTML ="";
-document.getElementById("verify_your_profile").innerHTML ="";
-
-
-document.getElementById('naam').innerHTML = `<p style="font-size:1em;"> Submit URL below to verify whether the site belongs to <span style="color:#DFB014 "> ${name} </span></> </p>`;
-
-var form=`<input type='url' id='link_id'  autocomplete="off" placeholder="Paste the URL" > `;
-var btn = `<input type="submit" id="search_btn" value="Search 🔍"> <p style="color:white; font-size:12px; padding-top:2px;">Please use a valid URL format (with https://). Otherwise, no data will be displayed.</p><div class="refresh_btn_box" style="margin-top:5px; margin-bottom:5px;"><button type="button" id="refresh_btn">Search Another Celeb</button></div> `;
-input_form.innerHTML=form;
-document.getElementById('input_btn').addEventListener('click', searchNow);
-input_btn.innerHTML=btn;
-no_promote.innerHTML="";
-
-document.getElementById('refresh_btn').addEventListener('click', function() {
-  window.location.reload();
-});
-
-
-}
-
-}
-
-
-
-});	 
-
-
-
-input_form.addEventListener("keydown", (event) => {
-    if (event.defaultPrevented) {
-      return; // Do nothing if the event was already processed
-    }
-  
-    switch (event.key) {
-     
-      case "Enter":
-        searchNow();
-        link_id.blur();
-        break;
-      case "Esc": // IE/Edge specific value
-      case "Escape":
-        // Do something for "esc" key press.
-        break;
-      default:
-        return; // Quit when this doesn't handle the key event.
-    }
-  
-    // Cancel the default action to avoid it being handled twice
-    event.preventDefault();
-  }, true);
-  
-function searchNow()
-{   var input = document.getElementById('link_id').value;
-	
-	
-	document.getElementById("data").innerHTML ="";
-	document.getElementById("disclaimer").innerHTML ="";
-  document.getElementById("error_message").innerHTML = ""; 
-  try {
-    var url = new URL(input);
-    // URL format is valid, continue with your code logic
-  } catch (error) {
-    // URL format is not valid, show an error message
-    var err_msg= `<p id="err_msg"style="margin-top:5px;">Submit a valid URL (eg https://fame.authifyweb.com).</p>`;
-    error_message.innerHTML=err_msg;
-
-    return; 
-  }
-	
-    var hostname = url.hostname;
-    var protocol = url.protocol;
-    var origin = url.origin;
-    var href= url.href;
-    var pathname= url.pathname;
-    var search = url.search;
-
-    var domain = filterdomain_from_hostname(hostname);
-
-    var output= filtering(url, href, origin, hostname,protocol,pathname,search,domain); 
-		
-			data.innerHTML = (output || "...Verifying");
-			
-}
-
-function filterdomain_from_hostname(hostname)
-{
-  var parts = hostname.split('.');
-  var domain;
-
-  if (parts.length > 2) {
-    if (parts[parts.length - 2].length === 2 || parts[parts.length - 2].length === 3) {
-      domain = parts.slice(-3).join('.');
+display: (item, event) => {
+  if (event) {
+    let userId = item.acc;
+    function handleFormSubmit(event) {
+      event.preventDefault();
+    if (userId) {
+      const profileUrl = `https://fame.authifyweb.com/user/${userId}`;
+      window.location.href = profileUrl;
     } else {
-      domain = parts.slice(-2).join('.');
+      // Handle case where no user is selected
+      console.error('No user selected');
     }
-  } else {
-    domain = hostname;
+  }
+  
+  // Attach the event listener to the form
+  const profileForm = document.getElementById('profileForm');
+  profileForm.addEventListener('submit', handleFormSubmit);
+    
+  }
+  return `${item.name}`;
+}
+
+
+});
+/*
+document.addEventListener("DOMContentLoaded", function() {
+  const categories = [
+    "CREATORS", "INFLUENCERS", "CELEBRITIES", "AUTHORS", "DESIGNERS", "CURATORS", "JOURNALISTS"
+  ];
+  let index = 0;
+  const categoryElement = document.getElementById("category");
+
+  function rotateCategories() {
+    categoryElement.textContent = categories[index];
+    index = (index + 1) % categories.length;
   }
 
-  return domain;
+  rotateCategories(); // Initial call
 
-}
-
-export function compare(link,display_link){
-var json = authData; 
-
-var cl= json.urls;
-
-var conditionMet = false; // Flag variable to track if the condition is met
-for (var i = 0; i < cl.length; i++) {
-  if (json.urls[i] === link) {
-
-    var Data = `<div style="color:white;font-size:12px; background-color:#1f282d;">` + display_link + `</br> <p> <span style="color:#A2FB15; font-size: 14px; ">Verified by authifyFame.</span> &nbsp;<span class="tooltip" > ✅ <span class="tooltiptext">This website is valid and legal. </span> </p></br> <p><span style="font-size:14px; color:white;">The page you submitted belongs to: </span><br> <span style="font-size:18px; color: #DFb014"> ${json.name}</span></p></br></div>`;
-
-                
-    var Disclaimer = `<br><p style="color:yellow;">Unless explicitly mentioned with an "Official" tag, all data is obtained from the public domain.</p> </br>`;
-
-    data.innerHTML = Data;
-    disclaimer.innerHTML = Disclaimer;
-    no_promote.innerHTML = "";
-
-    conditionMet = true; // Set the flag to true indicating the condition is met
-    break; // Exit the loop since the condition is met
-  }
-}
- 
-if (!conditionMet) {
-  var Data = `<div style="color:white; background-color:#1f282d; font-size:12px;" >` + display_link+`<p><br><span style="color:red;  font-size: 18px;"> The page you submitted doesn't belong to the person chosen above</span>&nbsp; <span class="tooltip"> ❌ <span class="tooltiptext">Possibly a scam. Report the page directly to the owner. </span> </p> </div>`;
-
-  var Disclaimer = `<br><p style="color:yellow;">Unless explicitly mentioned with an "Official" tag, all data is obtained from the public domain.</p> </br>`;
-
-  data.innerHTML = Data;
-  disclaimer.innerHTML = Disclaimer;
-  no_promote.innerHTML = "";
-}
-
-return Data; 
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-/* Loader or the svg spinner is modified from the works of Utkarsh Verma https://github.com/n3r4zzurr0/svg-spinners (MIT)  */
+  setInterval(rotateCategories, 1500); // Rotate every 4 seconds
+});
+*/
+/*   */
