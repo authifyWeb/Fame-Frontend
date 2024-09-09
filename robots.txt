@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /user/
+Allow: /pages/
+Allow: /
+
+Sitemap: https://fame.authifyweb.com/sitemap.xml
