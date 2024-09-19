@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /user/
+Allow: /user/
 Allow: /pages/
 Allow: /
 
