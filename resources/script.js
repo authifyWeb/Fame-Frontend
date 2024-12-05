@@ -10,7 +10,7 @@ typeahead({
     input: el,
     source: {
     remote: {
-        url: "https://fameapi.authifyweb.com/api/products?alias=%QUERY&select=alias,name,urls,logo,cat,origin,bg,acc", 
+        url: "https://aapifame.authifyweb.com/dinosaurs?alias=%QUERY&select=alias,name,urls,logo,cat,origin,bg,acc", 
 		wildcard: "%QUERY",
     requestOptions: {}
   },
